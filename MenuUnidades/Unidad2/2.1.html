@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Unidad 2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="csss.css">
+</head>
+<body>
+    <div id="agrupar">
+<header id="cabecera">
+    <h1>2.1 Notaciones</h1>
+    Hecho por: Hermelinda Santiago Bautista
+    <time>14/04/2021</time>
+</header>
+<section id="bd">
+
+    <h2>2.1 Notaciones</h2>
+    Las notaciones sirven de base para expresar sentencias bien definidas.<br>
+El uso más extendido de las notaciones sirve para expresar operaciones aritméticas.<br>
+Las expresiones aritméticas se pueden expresar de tres formas distintas: infija, prefija y postfija.<br>
+Los prefijos, Pre - Pos - In se refieren a la posición relativa del operador con respecto a los dos operandos.<br>
+La diversidad de notaciones corresponde en que para algunos casos es más sencillo un tipo de notación.<br>
+Las notaciones también dependen de cómo se recorrerá el árbol sintáctico, el cual puede ser en inorden, preorden o postorden; teniendo una relación de uno a uno con la notación de los operadores.<br>
+<br>
+<h3>2.1.1 Prefija</h3>
+La expresión o notación prefija nos indica que el operador va antes de los
+Operandos sus características principales son:<br>
+•   Los operadores conservan el mismo orden que la notación infija
+               equivalente.<br>
+•   No requiere de paréntesis para indicar el orden de precedencia de
+               operadores ya que él es una operación.<br>
+•   Se evalúa de izquierda a derecha hasta que encuentra el primer operador
+               seguido inmediatamente de un par de operando.<br>
+•   Se evalúa la expresión binaria y el resultado se cambia como un nuevo
+                operando. Se repite hasta que nos quede un solo resultado.<br>
+•   El orden es operador, primer operando, segundo operando. <br><br>
+<figure style="text-align: center;"><img src="imagenes/i1.png"></figure>
+
+La notación prefija pone el operador primero que los dos operandos, por lo que la expresión anterior queda: +ab-5. Esto se representa con una estructura del tipo FIFO (First In First Out) o cola.<br>
+Las estructuras FIFO son ampliamente utilizadas pero tienen problemas con el anidamiento aritmético.<br><br>
+
+<h3>2.1.2 Infija</h3>
+
+La notación infija es la más utilizada por los humanos porque es la más comprensible ya que ponen el operador entre los dos operandos. Por ejemplo a+b-5.<br>
+No existe una estructura simple para representar este tipo de notación en la computadora por esta razón se utilizan otras notaciones.<br>
+La expresión o notación infija es la forma más común que utilizamos para escribir expresiones matemáticas, estas notaciones se refiere a que el operador esta entre los operadores. La notación infija puede estar completamente parentizada o puede basarse en un esquema de precedencia de operadores así como el uso de paréntesis para invalidar los arreglos al expresar el orden de evaluación de una expresión:<br>
+3*4 = 12<br>
+3*4+ = 14 <br>
+3*(4+2) = 18<br>
+La notación infija tiene el problema de que en expresiones con más de un operador existe ambigüedad sobre cuál es el orden de evaluación. <br>
+Por ejemplo<br>
+ la expresión 8/4/2 se puede interpretar como (8/4)/2 o bien 8/(4/2). Las otras notaciones no sufren este problema. <br>
+La notación habitual. El orden es primer operando, operador, segundo operando.<br><br>
+
+<h3>2.1.3 Postfija </h3>
+Como su nombre lo indica se refiere a que el operador ocupa la posición<br>
+después de los operandos sus características principales son:<br>
+•   El orden de los operandos se conserva igual que la expresión infija<br>
+equivalente no utiliza paréntesis ya que no es una operación ambigua.
+•   La operación posfija no es exactamente lo inverso a la operación prefija<br>
+                equivalente.
+•   El orden es primer operando, segundo operando, operando.<br><br>
+(A+B)*C AB+C*
+
+         La notación postfija pone el operador al final de los dos operandos, por lo que la                             expresión queda: ab+5-<br>
+        La notación posftfija utiliza una estructura del tipo LIFO (Last In First Out) pila, la cual es la más                  utilizada para la implementación.<br>
+Ejemplo:<br><br>
+
+<figure style="text-align: center;"><img   style="text-align: center; width: 500px; height: 200px;"  src="imagenes/i2.png"></figure><br>
+<figure style="text-align: center;"><img   style="text-align: center; width: 500px; height: 70px;" src="imagenes/i3.jpg"></figure>
+<br>
+</section>
+
+<section id="hf">
+    <h3>
+        Bibliografia:
+    </h3>
+    Lenguajes y Automatas 2. (2020). 2.2.2 Código P . 2021, de Blogspot Sitio web: https://equiponegro8.blogspot.com/2020/03/2_56.html<br>
+    S/N. (S/N). UNIDAD II. 14/04/2021, de ITPN Sitio web: http://itpn.mx/recursosisc/7semestre/leguajesyautomatas2/Unidad%20II.pdf<BR>
+</section>
+
+<footer>
+<a style="text-decoration: none; color: white;" href="2.2.html" id="e2">
+    Siguiente tema
+</a>
+</footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Unidad 2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="csss.css">
+</head>
+<body>
+    <div id="agrupar">
+<header id="cabecera">
+    <h1>1.2 ELEMENTOS CLAVE PARA EL DISEÑO DE UNA BASE DE DATO MÓVIL</h1>
+    Hecho por: Luis Jazmany Morales Sánchez
+    <time>04/09/2021</time>
+</header>
+<section id="bd">
+    <h2>
+        1.2 ELEMENTOS CLAVE PARA EL DISEÑO DE UNA BASE DE DATO MÓVIL</h2><br>
+
+        Elementos Claves para el Diseño de una Base de Datos Móvil: <br>
+        <h2>	Sensibilidad</h2>
+        Las aplicaciones de los dispositivos móviles deben poder ofrecer la información de interés del usuario en cualquier lugar y hora del día.
+        La BD del dispositivo móvil solo hará uso de las tablas de la base de datos central que le sean útiles al usuario, debido a los recursos físicos que limitan al dispositivo como tal. Inclusive, en ocasiones de algunas tablas solo toma las columnas y/o filas que le son de interés, por lo que se deben crear nuevos esquemas de la base de datos central para llevar a cabo esto.
+        Factores: <br>
+        Tiempo que se demora en realizar una consulta: Técnicas/Métodos para conseguirlo:<br><br>
+        •	Reunir todos los datos de interés en un solo sitio y agruparlos en un modelo transaccional de clúster. El segundo método consiste en almacenar en la memoria cache del dispositivo los datos que son consultados con más frecuencia).
+        Tipo de datos que se quieren manejar y la cantidad de información que se va guardar para tener en cuenta que no entre en conflicto con la memoria que posee el dispositivo móvil. Se recomienda:<br>
+        •	Realizar una rápida normalización para evitar usar consultas en las cuales se deban hacer Join sobre las tablas existentes. Si el número de usuarios que realicen las consultas sobre la BD es grande, el desempeño del sistema no se debe afectar.<br><br>
+
+
+        
+   
+    <figure style="text-align: center;"> 
+        <img src="imagenes/2.1.png"></figure><br>
+        <h2>	Consistencia de Datos y Concurrencia: </h2>
+Debido a la alta concurrencia de los datos por parte de muchos usuarios y a las actualizaciones que la BD móvil realiza, en ocasiones se presentan
+inconsistencias en los datos. Por tal razón, la BD debe ser capaz de trabajar tanto en forma online como offline, y debe estar bien sincronizada con los servidores de bases de datos centralizadas para que los datos que se obtengan en cualquier forma sean consistentes.
+<br>
+<figure style="text-align: center;"> 
+    <img src="imagenes/2.2.png"></figure><br>
+    <h2>Sincronización y Resolución de Conflictos: </h2>
+Se debe mantener la base de datos actualizada debido a los Insert y Delete que se realizan sobre la misma. El problema radica en que muchos acceden a la BD al mismo tiempo y la sincronización para cada usuario del sistema puede ser demasiado compleja. Solución: <br><br>
+•	Uso de la fragmentación y replicación de la información, así cada usuario posee la información que necesita y es más fácil de actualizar.<br>
+•	Sin embargo, si no se puede realizar fragmentación a la BD, se puede manejar es el uso de prioridades de acuerdo al rol del usuario que esté usando el sistema.<br>
+<figure style="text-align: center;"> 
+    <img src="imagenes/2.3.png"></figure><br>
+    
+    <h2>Seguridad: </h2>
+    Las BD que se manejan, deben estar protegidas de código malicioso e incluso que no puedan ser vistos por terceros. Esto para mantener confidencialidad de los usuarios, así como de los recursos que manejan. Solución:<br><br>
+ <br>   •	Uso de sistemas de encriptación y de autenticación de los usuarios.<br>
+ <figure style="text-align: center;"> 
+    <img src="imagenes/2.4.png"></figure><br>
+    
+    <h2>	Alta Disponibilidad: </h2>
+    la base de datos debe estar disponible a cualquier hora del día, para ello, se debe contar con un plan de manejo automático de back up, manejo de caídas o fallas del sistema e inclusive el uso de replicaciones de la base de datos.
+    <br><figure style="text-align: center;"> 
+        <img src="imagenes/2.5.png"></figure><br>
+
+        <h2>Tamaño de los Datos: </h2>
+        A diferencia de los sistemas tradicionales de bases de datos, el tamaño de los datos en una base de datos móvil es importante ya que cuando se comunique con la base de datos central puede influir de manera muy severa y afecta también los tiempos de respuesta.<br><br>
+        <h2>	Tamaño de la Pantalla: </h2>
+        Debido a la dificultad que se tiene en los dispositivos móviles de mostrar toda la información, se recomienda mostrar la información de forma sencilla en tablas de 2 o 3 columnas con 4 o 5 filas a la vez.
+        <br><br>
+        <h2>Baja Velocidad de Transmisión:</h2> 
+        Aun cuando redes como CDMA manejen velocidades de 144kbps o 112kbps en GSM/GPRS, las velocidades de transmisión son bajas, comunicaciones sobre redes UMTS con tecnologías HSDPA HSUPA permiten velocidades de 7 a 12 Mbps; sin embargo, estas velocidades varían de acuerdo a la ubicación, al tipo de servicio que se adquiera, y al tipo de antena cercana.
+        <br>
+        <figure style="text-align: center;"> 
+            <img src="imagenes/2.6.png"></figure><br>        
+
+        <h2>    Baja Velocidad de Procesamiento: </h2>
+            La velocidad de los procesadores de los dispositivos móviles es alrededor de 200 a 1400 MHz en promedio, ya que se trata de dispositivos pequeños sin disipadores de calor, además hay que tener en cuenta que dicho performance es compartido para todas las aplicaciones del dispositivo.
+           <br>
+           <figure style="text-align: center;"> 
+            <img src="imagenes/2.7.png"></figure><br>  
+
+          <h2>  Costo: </h2>
+            Con el consumo masivo de los últimos años de las redes inalámbricas, es posible que el uso de estos sistemas sea más factible.
+            <br><br>
+          <h4>  Metodología de Diseño de una BD Móvil</h4>
+            1.	Recolección de Requerimientos de Negocio.<br>
+            2.	Análisis de Requerimientos de Negocio.<br>
+            3.	Diseño de la Base de Datos.<br>
+            4.	Construcción y Prueba de un Prototipo.<br>
+            5.	Construcción de la Base de Datos y Prueba.<br>
+            6.	Producción y Mantenimiento.<br><br>
+            
+            <h4>            Pasos para el Diseño de una BD Móvil
+            </h4>
+            1.	Selección de la Plataforma<br>
+            2.	Base de Datos Móvil<br>
+            3.	Base de Datos Central<br>
+            4.	Modelo de Transacciones<br>
+            5.	Técnicas de Optimización<br>
+            6.	Entidades de Bases de Datos<br>
+            7.	Atributos de las Entidades<br>
+            8.	Diagrama de Entidad-Relación<br>
+            <br>
+
+</section>
+
+<section id="hf">
+    <h3>
+        Bibliografia:
+    </h3>
+    Ortiz, N., Duarte, D., Mora, M., & Caicedo, F. (13 de Febrero de 2013). ARQUITECTURA Y DISEÑO DE BASES DE DATOS MÓVILES. Recuperado el 05 de Septiembre de 2021, de revistas.udistrital.edu.co: https://revistas.udistrital.edu.co/index.php/tia/article/view/4296/6014
+
+
+</section>
+
+<footer>
+<a style="text-decoration: none; color: white;" href="1.3.html" id="e2">
+    Siguiente tema
+</a>
+</footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Unidad 2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="csss.css">
+</head>
+<body>
+    <div id="agrupar">
+<header id="cabecera">
+    <h1>Unidad 3: Optimización</h1>
+    Hecho por: Hermelinda Santiago Bautista
+    <time>15/05/2021</time>
+</header>
+<section id="bd">
+
+    <h2>Unidad 3: Optimización</h2>
+    La fase de optimización de código consiste en mejorar el código intermedio, de modo que resulte un código máquina ms rápido de ejecutar Objetivo Obtener código que se ejecuta ms eficientemente según los criterios Tiempo de ejecución (optimización temporal) Espacio de memoria utilizado (optimización espacial)
+    <br>
+    <figure style="text-align: center;"><img style="text-align: center;" src="imagenes/1.png"></figure><br>
+
+    <h3>Funcionamiento</h3> 
+    Revisa el código generado a varios niveles de abstracción y realiza las optimizaciones aplicables al nivel de abstracción Representaciones de código intermedio de ms a menos abstractas.
+<br><br>
+    <h3>Ejemplos</h3> 
+    Si no se ha definido el orden de evaluación de los operando la siguiente optimización es válida<br>
+    B=2*A+(A=c*d);<br>
+    Pasar a<br>
+    A=c*d;<br>
+    B=A*3<br><br>
+    
+    <h2>3.1 Tipos de Optimización</h2>
+    - Momento de la compilación<br>
+    - Independiente de máquina <br>
+    -Transformaciones en código intermedio: reducción de coste, expresiones comunes, propagación de constantes<br>
+    - Dependiente de máquina- Asignación de registros- Ordenación/selección de instrucciones sea del programa donde se aplica Local, ciclos, Globales De mirilla<br>
+    <br>
+    <h2>3.1.1 Optimización Locales</h2> 
+    la forma más simple de optimización se necesita analizar el cuerpo del procedimiento completo solo el bloque básico que se está tratando de optimizar.<br>
+    Cada optimización local hace un poco por sí mismo la optimización en compiladores se realiza de forma repetida hasta que no sea posible mejorar. El optimizador se puede parar en cualquier momento para limitar el tiempo de compilación.<br>
+    Las optimizaciones locales se realizan sobre el bloque básico Optimizaciones locales Folding Propagación de constantes Reducción de potencia Reducción de sub-expresiones comunes.<br>
+    Un bloque básico es un fragmento de código que tiene una nica entrada y salida, y cuyas instrucciones se ejecutan secuencialmente. La idea del bloque básico es encontrar partes del programa cuyo análisis necesario para la optimización sea lo ms simple posible.<br><br>
+    <h3>Ejemplos</h3>
+    <figure style="text-align: center;"> <img src="imagenes/2.png"> </figure>
+
+    
+<h3>Folding</h3>
+El ensamblamiento es remplazar las expresiones por su resultado cuando se pueden evaluar en tiempo de compilacin (resultado constante). <br><br>
+<h3>Ejemplo</h3>
+ A=2+3+A+C -> A=5+A+C<br><br>
+<h3>Ejemplo:</h3>
+Se añade el procesamiento de las constantes a las reglas de análisis de expresiones. Optimiza: 2+3+b -> 5+b.
+<br><br>
+<h2>3.1.2 Ciclos</h2>
+Los ciclos son una de las partes más esenciales en el rendimiento de un programa
+dado que realizan acciones repetitivas, y si dichas acciones están mal realizadas,
+el problema se hace N veces más grandes. La mayoría de las optimizaciones
+sobre ciclos tratan de encontrar elementos que no deben repetirse en un ciclo.<br>
+<h3>Ejemplos</h3>
+while(a == b) {<br>
+ int c = a;<br>
+ c = 5;<br>
+ …;<br>
+}<br>
+En este caso es mejor pasar el Int c =a; fuera del ciclo de ser posible.<br>
+El problema de la optimización en ciclos y en general radica es que muy difícil
+saber el uso exacto de algunas instrucciones. Así que no todo código de proceso
+puede ser optimizado. Otros uso de la optimización pueden ser el mejoramiento de
+consultas en SQL o en aplicaciones remotas (sockets, E/S, etc.)<br><br>
+<figure style="text-align: center;"><img src="imagenes/3.jpg"></figure>
+<br>
+<h2>3.1.2 Ciclos</h2>
+Los ciclos son una de las partes más esenciales en el rendimiento de un programa
+dado que realizan acciones repetitivas, y si dichas acciones están mal realizadas,
+el problema se hace N veces más grandes. La mayoría de las optimizaciones
+sobre ciclos tratan de encontrar elementos que no deben repetirse en un ciclo.<br><br>
+<h3>Ejemplos</h3><br>
+while(a == b) {<br>
+ int c = a;<br>
+ c = 5;<br>
+ …;<br>
+}<br><br>
+En este caso es mejor pasar el Int c =a; fuera del ciclo de ser posible.<br>
+El problema de la optimización en ciclos y en general radica es que muy difícil
+saber el uso exacto de algunas instrucciones. Así que no todo código de proceso
+puede ser optimizado. Otros uso de la optimización pueden ser el mejoramiento de
+consultas en SQL o en aplicaciones remotas (sockets, E/S, etc.)<br>
+<figure style="text-align: center;"> <img src="imagenes/4.png"> </figure>
+<figure style="text-align: center;"> <img src="imagenes/5.png"> </figure>
+    
+</section>
+
+<section id="hf">
+    <h3>
+        Bibliografia:
+    </h3>
+    Lenguajes y Automatas 2. (2020). 2.2.2 Código P . 2021, de Blogspot Sitio web: https://equiponegro8.blogspot.com/2020/03/2_56.html<br>
+    S/N. (S/N). UNIDAD II. 14/04/2021, de ITPN Sitio web: http://itpn.mx/recursosisc/7semestre/leguajesyautomatas2/Unidad%20II.pdf<BR>
+</section>
+
+<footer>
+<a style="text-decoration: none; color: white;" href="2.2.html" id="e2">
+    Siguiente tema
+</a>
+</footer>
+
+    </div>
+
+</body>
+</html>

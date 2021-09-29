@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Unidad 2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="csss.css">
+</head>
+<body>
+    <div id="agrupar">
+        <header id="cabecera">
+            <h1>2.2 Representaciones de código intermedio</h1>
+            Hecho por: Yamilet Zapata Hernandez
+            <time>14/04/2021</time>
+        </header>
+        <section id="bd">
+        
+            <h2>2.2 Representaciones de código intermedio </h2>
+    <h3>2.2.1 Notacion Polaca</h3>
+La notación polaca es la originada por un Autómata con pila, en la que los operadores siempre preceden a los operandos sobre los que actúan, y que tiene la ventaja de no necesitar paréntesis: <br>
+•   Se utiliza principalmente para la representación de expresiones aritméticas.<br>
+•   Expresión a notación polaca inversa. <br>
+
+Algoritmo <br>
+Representa la expresión en forma de árbol sintáctico.<br>
+Recorrer el árbol en postorden <br>
+Ejemplo: a + b * c-d<br><br>
+<figure style="text-align: center;"><img src="imagenes/i4.png"></figure>
+Código a b c * + d-<br><br>
+
+<h3>Ventajas y desventajas de la notación polaca</h3> 
+•    Generación de código: simple, no utiliza registros.<br> 
+•   Optimización: es difícil de reordenar ya que hay que considerar el contenido de la pila. <br>
+•   Interpretación rápida: es muy fácil de interpretar ya que solo necesita una pila. <br>
+•   Transportable: si, ya que todos los procesadores implementan una pila.<br>
+<BR>
+<figure style="text-align: center;"><img src="imagenes/i5.png"></figure>
+<h3>2.2.2 Código P</h3>
+El código P comenzó como un código ensamblador objetivo estándar producido por varios compiladores Pascal en la década de 1970 y principios de la de 1980. Fue diseñado para código real para una máquina de pila hipotética la idea era hacer que los compiladores de Pascal se transportaran fácilmente requiriendo solo que se volviera a escribir el intérprete de la maquina P para una plataforma, el código P también aprobado ser útil como código intermedio y sean utilizado varias extensiones y modificaciones del mismo en diverso compiladores de código nativo, la mayor parte para lenguaje tipo Pascal. <br>
+Como el código P fue diseñado para ser directamente ejecutable, contiene una descripción implícita de un ambiente de ejecución particular que incluye tamaños de datos, además de mucha información específica para la maquina P, que debe conocer si se desea que un programa de código P se comprensible. La máquina P está compuesta por una memoria de código, una memoria de datos no específica para variables nombre das y una pila para datos temporales, junto como cualquiera registro que sea necesario para mantener la pila y apoyar la ejecución. <br>
+<br>
+<h3>2.2.3 Triplos</h3>
+ • (operador), (operacion1), (operador2)<br> 
+El resultado se asocia al número de tripleta<br> 
+Ejemplo: W * X  + (Y + Z) <br>
+1. *, W, X <br>
+2. +, Y, Z <br>
+3. +, (1), (2) <br>
+Control de flujo: IF X>Y THEN Z=X ELSE Z=Y+1<br> 
+1. >, X, Y <br>
+2. Saltar si falso, (1), 5<br> 
+3. =, Z, X <br>
+4. Saltar,, 7 <br>
+5. +, Y, 1 <br>
+6. =, Z, (5) <br>
+Problema<br>
+ La optimización supone mover tripletas y hay que recalcular las referencias.<br><br>
+<figure style="text-align: center;"><img src="imagenes/i6.png"></figure>
+<br><br>
+<h3>2.2.4 Cuádruplos</h3> 
+• (operador),(operacion1),(operador2),(resultado)<br> 
+
+Ejemplo: <br>
+(A+B)*(C+D)-E<br>
++, A, B, T1<br>
++, C, D, T2 <br>
+*, T1, T2, T3<br>
+ -, T3, E, T4 <br>
+Las cuádruplas facilitan la aplicación de muchas optimizaciones, pero hay que tener un algoritmo para la reutilización de las variables temporales (reutilización de registros del procesador).<br>
+<br>
+<figure style="text-align: center;"> <img src="imagenes/i7.png"> </figure><br>
+<figure style="text-align: center;"> <img src="imagenes/i8.png"> </figure><br>
+<figure style="text-align: center;"> <img src="imagenes/i9.png"> </figure><br>
+
+        </section>
+        
+        <section id="hf">
+            <h3>
+                Bibliografia:
+            </h3>
+            Lenguajes y Automatas 2. (2020). 2.2.2 Código P . 2021, de Blogspot Sitio web: https://equiponegro8.blogspot.com/2020/03/2_56.html<br>
+            S/N. (S/N). UNIDAD II. 14/04/2021, de ITPN Sitio web: http://itpn.mx/recursosisc/7semestre/leguajesyautomatas2/Unidad%20II.pdf<BR>        
+        </section>
+        
+        <footer>
+        <a style="text-decoration: none; color: white;" href="2.3.html" id="e2">
+            Siguiente tema
+        </a>
+        </footer>
+        
+            </div>
+
+
+</body>
+</html>

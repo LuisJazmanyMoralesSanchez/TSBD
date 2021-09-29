@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Unidad 2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="csss.css">
+</head>
+<body>
+    <div id="agrupar">
+<header id="cabecera">
+    <h1>Unidad 4: Administrador de memoria</h1>
+    Hecho por: Julio Cesar Perez Hernandez
+    <time>14/06/2021</time>
+</header>
+<section id="bd">
+    <h2>
+    4.4 Administrador de memoria</h2>
+
+    La administración de la memoria es un proceso hoy en día muy importante, de tal modo que su mal o buen uso tiene una acción directa sobre el desempeño de memoria. En general un ensamblador tiene un administrador de memoria más limitado que un compilador; en la mayoría de los lenguajes de programación el uso de punteros no estaba vigilado por lo que se tienen muchos problemas con el uso de memoria. Los lenguajes más recientes controlan el uso de punteros y tienen un programa denominado recolector de basura que se encarga de limpiar la memoria no utilizada mejorando el desempeño.<br>
+    La   memoria   principal   puede   ser   considerada   como   un arreglo lineal de localidades de almacenamiento de un byte de tamaño. Cada localidad de almacenamiento tiene asignada una dirección que la identifica<br>
+     Se distinguen los siguientes propósitos del sistema de administración de memoria:<br><br>
+    <h2>
+     Protección.</h2>
+    Si   varios   programas   comparten   la   memoria   principal,   se   debería   asegurar   que   el programa no sea capaz de cambiar las ubicaciones no pertenecientica él. Aunque una acción  de  escritura  puede  tener efectos  más graves que una  de  lectura,  esta última tampoco debería estar permitida, para proporcionar algo de privacidad al programa.<br><br>
+    <h2>Compartimiento.</h2>
+    Este objetivo parece contradecir al anterior, sin embargo a veces es necesario para los usuarios poder compartir y actualizar información (por ejemplo, en una base de datos) y, si se organiza la tarea de entrada a la misma, se puede evitar el tener varias copias de la rutina.<br><br>
+    <h2>Reubicación.</h2>
+    La técnica de multiprogramación requiere que varios programas ocupen la memoria al mismo  tiempo.   Sin   embargo   no   se   sabe   con   anticipación   donde   será   cargado   cada programa por lo que no es práctico usar direccionamiento absoluto de memoria.<br><br>
+    <h2>Organización física.</h2>
+    Debido al  costo  de una  memoria  principal  rápida, éste se   usa   en   conjunto  con una memoria secundaria mucho más lenta (y por consiguiente, barata) a fines de extender su capacidad.<br><br>
+    <h2>Organización lógica.</h2>
+     Aunque   la   mayor   parte   de   las   memorias   son   organizadas   linealmente   con   un direccionamiento secuencial, esto difícilmente concuerde con el camino seguido por el programa, debido al uso de procedimientos, funciones, subrutinas, arreglos, etc<br><br>
+    <h3>Ejemplo </h3>
+    <figure style="text-align: center;"><img src="imagenes/a6.png"></figure>
+    <figure style="text-align: center;"><img src="imagenes/a7.gif"></figure>
+
+</section>
+
+<section id="hf">
+    <h3>
+        Bibliografia:
+    </h3>
+    http://cidecame.uaeh.edu.mx/lcc/mapa/PROYECTO/libro32/137_generador_de__cdigo_objeto.html<br>
+    https://www.goconqr.com/es-CR/p/18374001?dont_count=true&frame=true&fs=true<br>
+    http://itpn.mx/recursosisc/7semestre/leguajesyautomatas2/Unidad%20IV.pdf<br>
+    http://unidad4generacion.blogspot.com/<br>
+    
+</section>
+
+<footer>
+<a style="text-decoration: none; color: white;" href="2.2.html" id="e2">
+    Siguiente tema
+</a>
+</footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Unidad 1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="csss.css">
+</head>
+<body>
+    <div id="agrupar">
+<header id="cabecera">
+    <h1>1.4 CASO PRACTICO</h1>
+    Hecho por: Jose Gabriel Martinez Cuenca
+    <time>06/09/2021</time>
+</header>
+<section id="bd">
+    <h2>
+        1.4 CASO PRACTICO</h2><br>
+
+        Lawyers App es un pequeño ejemplo que demuestra cómo crear una aplicación Android con bases de datos relacionales.
+<br>
+        Su función es servir como plataforma de persistencia para todos los abogados de una compañía que presta servicios de asesoría a los usuarios.
+   <br>     <br>
+    <h3>    Se compone de 3 screens:</h3>
+<br>
+
+> Lawyers: Contiene una lista con todos los abogados del gabinete.<br>
+> Lawyer Detail: Muestra el detalle de un abogado al presionar un ítem de lista.<br>
+> Add/Edit Lawyer: Formulario con campos de texto para crear o modificar un abogado.<br>
+> El siguiente es un wireframe que muestra los puntos de interacción:<br>
+
+<figure style="text-align: center;"> 
+    <img src="imagenes/ab1.png"></figure><br>
+
+Normalmente cuando conectamos otro gestor de bases de datos tenemos que validar los datos del equipo, el usuario y el esquema, pero con SQLite no se requiere nada de eso, ya que podemos trabajar directamente sobre la base de datos.
+<br>
+La clase que nos permitirá comunicar nuestra aplicación con la base de datos se llama SQLiteOpenHelper. Se trata de una clase abstracta que nos provee los mecanismos básicos para la relación entre la aplicación Android y la información.
+<br>
+Para implementar este controlador debes:
+<br><br>
+> Crear una clase que extienda de SQLiteOpenHelper<br>
+> Configurar un constructor apropiado<br>
+> Sobrescribir los métodos onCreate() y onUpgrade()<br>
+> Creando helper de abogados<br>
+<br><br>
+1. Crea nueva clase que extienda de SQLiteOpenHelper y llamala LawyersDbHelper.
+<br>
+public class LawyersDbHelper extends SQLiteOpenHelper {<br><br>
+2. Escribe tú constructor y usa super para mantener la herencia del helper.
+<br>
+public static final int DATABASE_VERSION = 1;<br>
+public static final String DATABASE_NAME = "Lawyers.db";<br>
+
+public LawyersDbHelper(Context context) {<br>
+    super(context, DATABASE_NAME, null, DATABASE_VERSION);<br>
+}<br><br>
+<h4>Los parámetros del constructor tienen la siguiente finalidad:</h4>
+
+<h4>Contexto de acción para el helper.</h4>
+String name: Nombre del archivo con extensión .db, donde se almacenará la base de datos, que a su vez corresponde al nombre de la base de datos.<br>
+CursorFactory factory: Asignamos null, por ahora no es necesario comprender el funcionamiento de este parámetro.<br>
+int version: Entero que representa la versión de la base de datos. Su valor inicial por defecto es 1. Si en algún momento la versión es mayor se llama al método onUpgrade() para actualizar la base de datos a la nueva versión. Si es menor, se llama a downUpgrade() para volver a una versión previa.<br>
+3. Sobrescribe el método onCreate().
+<br>
+Este método es llamado automáticamente cuando creamos una instancia de la clase SQLiteOpenHelper. En su interior establecemos la creación de las tablas y registros.
+<br>
+Recibe como parámetro una referencia de la clase SQLiteDataBase, la cual actua como manejadora de la base de datos.
+<br><br>
+@Override<br>
+public void onCreate(SQLiteDatabase sqLiteDatabase) {<br>
+    // Comandos SQL<br>
+}<br>
+Por defecto el archivo de la base de datos será almacenado en:<br>
+
+ /data/data/<paquete>/databases/<nombre-de-la-bd>.db<br><br>
+
+<h4>. Sobrescribe el método onUpgrade().</h4><br>
+
+Este es ejecutado si se identificó que el usuario tiene una versión antigua de la base de datos.
+<br>
+En su interior establecerás instrucciones para modificar el esquema de la base de datos, como por ejemplo eliminar todo el esquema y recrearlo, agregar una nueva tabla, añadir una nueva columna, etc.
+<br><br>
+@Override<br>
+public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {<br>
+    // No hay operaciones<br>
+}<br><br>
+<h4>Recibe tres parámetros:</h4>
+<br>
+SQLiteDatabase db: Manejador de la base de datos.<br>
+int oldVersion: Se trata de un entero que indica la versión antigua de la base de datos.<br>
+int newVersion: Entero que se refiere a la versión nueva de la base de datos.<br>
+<br>
+<h1>Codigo para crear una base de datos</h1>
+<br>
+@Override<br>
+public void onCreate(SQLiteDatabase sqLiteDatabase) {<br>
+    sqLiteDatabase.execSQL("CREATE TABLE " + LawyerEntry.TABLE_NAME + " ("<br>
+            + LawyerEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"<br>
+            + LawyerEntry.ID + " TEXT NOT NULL,"<br>
+            + LawyerEntry.NAME + " TEXT NOT NULL,"<br>
+            + LawyerEntry.SPECIALTY + " TEXT NOT NULL,"<br>
+            + LawyerEntry.PHONE_NUMBER + " TEXT NOT NULL,"<br>
+            + LawyerEntry.BIO + " TEXT NOT NULL,"<br>
+            + LawyerEntry.AVATAR_URI + " TEXT,"<br>
+            + "UNIQUE (" + LawyerEntry.ID + "))");<br>
+
+}<br><br>
+Este método ejecuta una sola sentencia SQL que no retorne en filas. Por lo que el comando SELECT no es posible usarlo dentro de él.
+<br>
+Es recomendable que la llave primaria sea BaseColumns._ID, ya que el framework de Android usa esta referencia internamente en varios procesos.
+<br>
+Sin embargo puedes usar tu propio ID y añadirle un índice UNIQUE para mantener la unicidad de tus filas según tus reglas de negocio.
+<br>
+Evita ejecutar múltiples sentencias en una sola invocación del método execSQL(). Puede que se ejecute la primera, pero las otras no surtirán efecto.
+<br>
+
+</section>
+
+<section id="hf">
+    <h3>
+        Bibliografia:
+    </h3>
+    https://www.develou.com/android-sqlite-bases-de-datos/#Ejemplo_Base_De_Datos_SQLite_Lawyers_App
+</section>
+
+<footer>
+<a style="text-decoration: none; color: white;" href="tabla.html" id="e2">
+    Siguiente tema
+</a>
+</footer>
+
+    </div>
+
+</body>
+</html>

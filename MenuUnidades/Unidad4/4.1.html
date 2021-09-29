@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Unidad 2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="csss.css">
+</head>
+<body>
+    <div id="agrupar">
+<header id="cabecera">
+    <h1>Unidad 4: Registros</h1>
+    Hecho por: Jose Gabriel Martinez Cuenca
+    <time>13/06/2021</time>
+</header>
+<section id="bd">
+  <h2>  ¿Qué son?</h2>
+    Los registros son la memoria principal de la computadora. Existen diversos registros de propósito general y otros de uso exclusivo. Algunos registros de propósito general son utilizados para cierto tipo de funciones. Existen registros acumuladores, puntero de instrucción, de pila, etc.<br>
+    
+    Los registros son espacios físicos dentro del microprocesador con capacidad de 4 bits hasta 64 bits dependiendo del microprocesador que se emplee.<br>
+    ¿Quiénes lo utilizan?<br>
+    Antes de nada, para el desarrollo de esta parte hablaremos indistintamente de registros de activación o de marcos de pila. Esto se debe a que en la documentación encontrada sobre el manejo de los registros ebp y esp se hace mención a dicho concepto de marco de   pila.   Puesto   que   el   lenguaje   permite   recursividad,   los   registros   de   activación   se asignan dinámica mente.<br> <br>
+<h2>    Distribución</h2>
+    La UCP o CPU tiene 14 registros internos, cada uno de ellos de 16 bits (una palabra). Los bits están enumerados de derecha a izquierda, de tal modo que el bit menos significativo es el bit 0.<br>
+    Los registros se pueden clasificar de la siguiente forma: <br>
+    Registros de datos:<br>
+    AX: Registro acumulador. Es el principal empleado en las operaciones aritméticas.<br>
+    BX: Registro base. Se usa para indicar un desplazamiento.<br>
+    CX: Registro contador. Se usa como contador en los bucles.<br>
+    DX: Registro de datos.<br>
+    Estos registros son de uso general y también pueden ser utilizados como registros de 8 bits, para utilizarlos como tales es necesario referirse a ellos como por ejemplo: AH y AL, que son los bytes alto (high) y bajo (low) del registro AX. Esta nomenclatura es aplicable también a los registros BX, CX y DX. <br><br>
+   <h2> Registros de segmentos: </h2>
+    CS: Registro de segmento de código. Contiene la dirección de las instrucciones del programa. <br>
+    DS: Registro segmento de datos. Contiene la dirección del área de memoria donde se encuentran los datos del programa.<br>
+    SS: Registro segmento de pila. Contiene la dirección del segmento de pila. La pila es un espacio de memoria temporal que se usa para almacenar valores de 16 bits (palabras).<br>
+    ES: Registro segmento extra. Contiene la dirección del segmento extra. Se trata de un segmento de datos adicional que se utiliza para superar la limitación de los 64Kb del segmento de datos y para hacer transferencias de datos entre segmentos.<br><br>
+    <h2>Registros punteros de pila:</h2>
+    SP: Puntero de la pila. Contiene la dirección relativa al segmento de la pila.<br>
+    BP: Puntero base. Se utiliza para fijar el puntero de pila y así poder acceder a los elementos de la pila.<br><br>
+    <h2>Registros índices:</h2>
+     SI: Índice fuente.<br>
+     DI: Índice destino.<br><br>
+    <h2>¿Cuáles su aplicación en la generación de códigos?</h2>
+    1. usar el registro de y si está en un registro que no tiene otra variable, y además y no<br>
+    Está viva ni tiene uso posterior. Si no:<br>
+    2. usar un registro vacío si hay. Si no:<br>
+    3. usar un registro ocupado si op requiere que x esté en un registro o si x tiene uso<br>
+    Posterior. Actualizar el descriptor de registro. Si no:<br>
+    4. usar la posición de memoria de x<br>
+    <h3>Ejemplo</h3>
+    <figure style="text-align: center;"><img src="imagenes/a1.png"></figure>
+    
+   
+</section>
+
+<section id="hf">
+    <h3>
+        Bibliografia:
+    </h3>
+    Lenguajes y Automatas 2. (2020). 2.2.2 Código P . 2021, de Blogspot Sitio web: https://equiponegro8.blogspot.com/2020/03/2_56.html<br>
+    S/N. (S/N). UNIDAD II. 14/04/2021, de ITPN Sitio web: http://itpn.mx/recursosisc/7semestre/leguajesyautomatas2/Unidad%20II.pdf<BR>
+</section>
+
+<footer>
+<a style="text-decoration: none; color: white;" href="2.2.html" id="e2">
+    Siguiente tema
+</a>
+</footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    text-align: center;
+}
+
+#encabezado{
+    background-image: url(trabajo.jpg);
+    text-align: center;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 255);
+    font-size: 20px;
+    padding: 20px;
+}
+#menu{
+  background-color: rgb(58, 58, 57);
+  border: 1px rgb(255, 255, 255);
+  text-align: center;
+  -webkit-animation: ease-in: 0.05s;
+}
+#menu li{
+    display: inline-block;  
+margin: 15px;
+text-decoration: none;
+font-family: Arial, Helvetica, sans-serif; color: rgb(255, 255, 255);
+font-size: 20px;
+border: 1px white; 
+}
+#espacio{
+    background-image: url(compu.jpg);
+    height: 300px;
+    text-align: center;
+    padding: 100px;
+    margin: 0;
+    
+}
+
+aside{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 20px;
+    margin: 30px;
+}
+
+#menu li:hover{
+-webkit-transform: scale(1.05);
+-moz-transform: scale(1.05);
+/*background: rgb(255, 255, 255);*/
+color: rgb(161, 156, 156);
+color: black;
+}
+footer{
+    clear: both;
+    padding: 40px;
+    background:rgb(2, 2, 49);
+    font-family: Arial, Helvetica, sans-serif; color: white;
+    font-size: 15px;
+    
+}
+#image1{
+    width: 400px;
+    height: 350px;
+}
+button{
+    font-family: Arial, Helvetica, sans-serif; color: white;
+    font-size: 16px;
+    width: 150px;
+    height: 35px;
+    background-color: rgb(23, 23, 68);
+    border-radius: 6px;
+    border-style:hidden;
+    margin: 0;
+}
